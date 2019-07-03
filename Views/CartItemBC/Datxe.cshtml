@@ -23,63 +23,64 @@
 </table>
 <div class="text-center">
     @Html.ActionLink("TRỞ VỀ GIỎ HÀNG", "Giohang", "CartItemBC", new { @class = "book-now-btn" })
+    <hr />
 </div>
 
-<div class="book-a-car col-lg-5">
-    @using (Html.BeginForm())
-    {
-        @Html.ValidationSummary(true)
-        <form>
-            <div>
-                <h4>Họ tên của bạn: </h4>
-                <div class="name-input">
-                    <input type="text" name="hoTen" placeholder="Nhập họ tên của bạn (Nguyễn Văn A)"/>
-                </div>
-            </div>
-            <div>
-                <h4>Địa chỉ: </h4>
-                <div class="name-input">
-                    <input type="text" name="diaChi" placeholder="Nhập địa chỉ" />
-                </div>
-            </div>
-            <div>
-                <h4>Số điện thoại: </h4>
-                <div>
-                    <input type="text" name="sdt" placeholder="Nhập số điện thoại (038XXXXXXX)"/>
-                </div>
-            </div>
-            <div>
-                <h4>Chứng minh thư: </h4>
-                <div class="name-input">
-                    <input type="text" name="cmnd" placeholder="Nhập số chứng minh nhân dân (301XXXXXX)" />
-                </div>
-            </div>
-            <div>
-                <h4>Ngày đặt xe: @DateTime.Now.ToShortDateString()</h4>
-                <div>
-                    
-                </div>
-            </div>
-            <div class="pick-up-date book-item">
-                <h4>Ngày nhận xe: </h4>
-                <div>
-                    <input type="date" name="ngayNhan" placeholder="Chọn ngày" />
-                </div>
-            </div>
-            <div>
-                <h4>Ngày trả xe: </h4>
-                <div>
-                    <input type="date" name="ngayTra" />
-                </div>
-            </div>
-            <div>
-                <div class="input-submit">
-                    <input type="submit" value="ĐỒNG Ý ĐẶT XE" />
-                </div>
-            </div>
-        </form>
-    }
-</div>
-<div class="text-center">
+<div class="review-area">
+    <h5>Thông tin của bạn </h5>
+    <hr />
+    <div class="review-form">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
 
+            <form method="post" id="form-validate">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 p-3">
+                        <div class="name-input">
+                            <input type="text" name="hoTen" placeholder="Nhập họ tên của bạn (Nguyễn Văn A)" required/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 p-3">
+                        <div class="name-input">
+                            <input type="text" name="diaChi" placeholder="Nhập địa chỉ" required/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 p-3">
+                        <div>
+                            <input type="text" name="sdt" placeholder="Nhập số điện thoại (038XXXXXXX)" required/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 p-3">
+                        <div class="name-input">
+                            <input type="text" name="cmnd" placeholder="Nhập số chứng minh nhân dân (301XXXXXX)" required/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 p-3">
+                        <h6 class="p-2">Ngày nhận xe: </h6>
+                        <div>
+                            <input type="date" name="ngayNhan" placeholder="Chọn ngày" required/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 p-3">
+                        <h6 class="p-2">Ngày trả xe: </h6>
+                        <div>
+                            <input type="date" name="ngayTra" required/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 p-3">
+                        <div>
+                            <h5>Ngày đặt xe: @DateTime.Now.ToShortDateString()</h5>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="input-submit">
+                        <button type="submit">ĐỒNG Ý ĐẶT XE</button>
+</div>
+                </div>
+            </form>
+
+        }
+    </div>
 </div>

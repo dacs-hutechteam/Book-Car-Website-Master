@@ -6,14 +6,15 @@ using BookCarProjectMaster.Models;
 
 namespace BookCarProjectMaster.Areas.AdministratorCP.Controllers
 {
+    [Authorize(Roles = "MANAGER, ADMIN")]
     public class BookCarsController : Controller
     {
         private DbBookCarContext db = new DbBookCarContext();
 
         // GET: AdministratorCP/BookCars
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var bookCars = db.BookCars.Include(b => b.CarProduct);
+            var bookCars = db.BookCars.Include(b => b.CarProduct).Where(p => p.CardIDUser.Contains(searchString) || searchString == null);
             return View(bookCars.ToList());
         }
 
@@ -90,6 +91,7 @@ namespace BookCarProjectMaster.Areas.AdministratorCP.Controllers
             return View(bookCar);
         }
 
+        [Authorize(Roles = "ADMIN")]
         // GET: AdministratorCP/BookCars/Delete/5
         public ActionResult Delete(int? id)
         {

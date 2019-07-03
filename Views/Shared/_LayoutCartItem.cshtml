@@ -107,6 +107,42 @@
         <img src="~/TaiNguyen/assets/img/scroll-top.png" alt="JSOFT">
     </div>
     <!--== Scroll Top Area End ==-->
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $("#formValidate").validate({
+			rules: {
+				hoTen: "required",
+                sdt: {
+                    required: true,
+                    minlength: 5
+                },
+                cmnd: {
+                    required: true,
+                    minlength: 5
+                },
+				diachi: {
+					required: true,
+					minlength: 2
+				}
+			},
+			messages: {
+				hoTen: "Vui lòng nhập họ tên",
+                sdt: {
+                    required: "Vui lòng nhập số điện thoại",
+                    minlength: "Số điện thoại không đúng"
+                },
+                cmnd: {
+                    required: "Vui lòng nhập chứng minh thư",
+                    minlength: "Chứng minh thư không đúng"
+                },
+				diachi: {
+					required: "Vui lòng nhập địa chỉ",
+					minlength: "Địa chỉ ngắn vậy, chém gió ah?"
+				}
+			}
+		});
+        });
+    </script>
     <!--=======================Javascript============================-->
     <!--=== Jquery Min Js ===-->
     <script src="~/TaiNguyen/assets/js/jquery-3.2.1.min.js"></script>

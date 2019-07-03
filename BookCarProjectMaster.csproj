@@ -189,7 +189,6 @@
     <Compile Include="Areas\AdministratorCP\Controllers\CarProductsController.cs" />
     <Compile Include="Areas\AdministratorCP\Controllers\FuelsController.cs" />
     <Compile Include="Areas\AdministratorCP\Controllers\GearBoxesController.cs" />
-    <Compile Include="Controllers\BookCarsController.cs" />
     <Compile Include="Controllers\CartItemBCController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -509,8 +508,6 @@
     <Content Include="Views\Shared\_LayoutTheLoaiSanPham.cshtml" />
     <Content Include="Views\Shared\_PartialFooter.cshtml" />
     <Content Include="Views\Shared\_PartialHeader.cshtml" />
-    <Content Include="Views\BookCars\Create.cshtml" />
-    <Content Include="Views\BookCars\DatXe.cshtml" />
     <Content Include="Views\CartItemBC\Giohang.cshtml" />
     <Content Include="Views\Shared\_LayoutCartItem.cshtml" />
     <Content Include="Views\CartItemBC\Datxe.cshtml" />

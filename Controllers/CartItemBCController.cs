@@ -80,27 +80,34 @@ namespace BookCarProjectMaster.Controllers
         [HttpPost]
         public ActionResult DatXe(FormCollection formCollection)
         {
-            BookCar bookCar = new BookCar();
-            List<CartItem> cartItems = Laygiohang();
-            bookCar.FullNameUser = formCollection["hoTen"];
-            bookCar.NumberPhoneUser = formCollection["sdt"];
-            bookCar.CardIDUser = formCollection["cmnd"];
-            bookCar.AddressUser = formCollection["diaChi"];
-            bookCar.DateBookCar = DateTime.Now;
-            var dateOfReceive = String.Format("{0:dd/MM/yyyy}", formCollection["ngayNhan"]);
-            bookCar.DateOfReceive = DateTime.Parse(dateOfReceive);
-            var dateReturn = String.Format("{0:dd/MM/yyyy}", formCollection["ngayTra"]);
-            bookCar.DateReturn = DateTime.Parse(dateReturn);
-            bookCar.PaymentStatus = false;
-            db.BookCars.Add(bookCar);
-            foreach (var item in cartItems)
+            try
             {
-                bookCar.CarProductsId = item.id;
-                bookCar.TotalRental = (decimal)item.giaThue;
+                BookCar bookCar = new BookCar();
+                List<CartItem> cartItems = Laygiohang();
+                bookCar.FullNameUser = formCollection["hoTen"];
+                bookCar.NumberPhoneUser = formCollection["sdt"];
+                bookCar.CardIDUser = formCollection["cmnd"];
+                bookCar.AddressUser = formCollection["diaChi"];
+                bookCar.DateBookCar = DateTime.Now;
+                var dateOfReceive = String.Format("{0:dd/MM/yyyy}", formCollection["ngayNhan"]);
+                bookCar.DateOfReceive = DateTime.Parse(dateOfReceive);
+                var dateReturn = String.Format("{0:dd/MM/yyyy}", formCollection["ngayTra"]);
+                bookCar.DateReturn = DateTime.Parse(dateReturn);
+                bookCar.PaymentStatus = false;
                 db.BookCars.Add(bookCar);
+                foreach (var item in cartItems)
+                {
+                    bookCar.CarProductsId = item.id;
+                    bookCar.TotalRental = (decimal)item.giaThue;
+                    db.BookCars.Add(bookCar);
+                }
+                db.SaveChanges();
+                Session["Giohang"] = null;
             }
-            db.SaveChanges();
-            Session["Giohang"] = null;
+            catch (System.FormatException)
+            {
+               
+            }
             return RedirectToAction("Xacnhan", "CartItemBC");
         }
 

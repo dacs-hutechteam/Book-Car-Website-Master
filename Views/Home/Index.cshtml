@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<BookCarProjectMaster.Models.CarProduct>
-@using PagedList;
+
 @{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
@@ -20,17 +20,16 @@
                     <span class="price"><i class="fa fa-tag"></i> @item.RentCost$/day</span>
                 </h3>
 
-                <h5 href="/Home/Details/@item.CarProductsId">Info</h5>
+                <h5>Info</h5>
 
                 <div class="p-car-feature">
-                    <a href="#">Màu: @item.CarColor</a>
-                    <a href="#">Số Gế: @item.NumberOfSeats</a>
+                    <a>Màu: @item.CarColor</a>
+                    <a>Số Ghế: @item.NumberOfSeats</a>
                     @Html.ActionLink("Chi Tiết", "Details", new { id = item.CarProductsId })
                 </div>
             </div>
         </div>
     </div>
 }
-
 
 
