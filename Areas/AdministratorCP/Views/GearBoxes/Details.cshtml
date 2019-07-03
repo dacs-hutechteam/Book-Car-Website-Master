@@ -1,0 +1,27 @@
+﻿@model BookCarProjectMaster.Models.GearBox
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GearBox</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NameGearBox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameGearBox)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GearBoxsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

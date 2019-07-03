@@ -1,0 +1,83 @@
+﻿@model IEnumerable<BookCarProjectMaster.Models.CarProduct>
+
+@{
+    ViewBag.Title = "Products:Administrator";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<p class="text-right text-uppercase">
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-warning" })
+</p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="main-card mb-3 card">
+            <div class="card-header">
+                Sản Phẩm Xe
+                <div class="btn-actions-pane-right">
+                    <div role="group" class="btn-group-sm btn-group">
+                        <button class="active btn btn-focus">Last Week</button>
+                        <button class="btn btn-focus">All Month</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                        <tr>
+                            @*<th class="text-center">Mã Xe</th>*@
+                            <th>Tên Xe</th>
+                            <th class="text-center">Giá</th>
+                            <th class="text-right">Status</th>
+                            <th class="text-right">Công cụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @*<td class="text-center text-muted">@item.CarProductsId</td>*@
+                                <td>
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="widget-content-left">
+                                                    @*<img width="40" class="rounded-circle" src="@item.ImageFont" alt="@item.ImageFont">*@
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left flex2">
+                                                <div class="widget-heading">@item.ModelCar</div>
+                                                @*<div class="widget-subheading opacity-7">@item.Info</div>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">@item.RentCost$</td>
+                                <td class="text-right">
+                                    <div class="badge badge-warning">
+                                        @{
+                                            if (item.CarProductStatus)
+                                            {
+                                                @Html.Raw("Còn Xe")
+                                            }
+                                            else
+                                            {
+                                                @Html.Raw("Hết Xe")
+                                            }
+                                        }
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.CarProductsId }, new { @class = "text-warning" }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.CarProductsId }, new { @class = "text-warning" }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.CarProductsId }, new { @class = "text-warning" })
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

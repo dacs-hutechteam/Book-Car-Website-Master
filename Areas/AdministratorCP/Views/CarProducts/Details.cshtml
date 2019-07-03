@@ -1,0 +1,74 @@
+﻿@model BookCarProjectMaster.Models.CarProduct
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<!--== Car List Area Start ==-->
+<section id="car-list-area" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Car List Content Start -->
+            <div class="col-lg-8">
+                <div class="car-details-content">
+                    <h2>@Model.ModelCar <span class="price">Giá Thuê: <b>@Model.RentCost$</b></span></h2>
+                    <div class="d-inline-flex p-5">
+                        <div class="p-3">
+                            <img style="width:300px; height: auto;" src="@Model.ImageFont" alt="@Model.ImageFont">
+                        </div>
+                        <div class="p-3">
+                            <img style="width:300px; height: auto;" src="@Model.ImageBack" alt="@Model.ImageBack">
+                        </div>
+                    </div>
+                    <div class="car-details-info">
+                        <h4>Additional Info</h4>
+                        <p> @Model.Info</p>
+
+                        <div class="technical-info">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="tech-info-table">
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <th>Màu Sắc</th>
+                                                <td>@Model.CarColor</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Nhiên Liệu</th>
+                                                <td>@Html.DisplayFor(model => model.Fuel.NameFuel)</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Số Chổ Ngồi</th>
+                                                <td>@Model.NumberOfSeats</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Hộp Số</th>
+                                                <td>@Html.DisplayFor(model => model.GearBox.NameGearBox)</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="tech-info-list">
+                                        <ul>
+                                            <li>ABS</li>
+                                            <li>Air Bags</li>
+                                            <li>Bluetooth</li>
+                                            <li>Car Kit</li>
+                                            <li>GPS</li>
+                                            <li>Music</li>
+                                            <li>Bluetooth</li>
+                                            <li>ABS</li>
+                                            <li>GPS</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

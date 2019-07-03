@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BookCarProjectMaster.Models.CarCategory>
+
+@{
+    ViewBag.Title = "Category:Administrator";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-uppercase text-center mt-5">Quản lý hãng xe</h2>
+
+<p class="text-right text-uppercase">
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table table-dark">
+    <tr style="background-color: darkgray; color: black; text-transform: uppercase">
+        <th>
+            @*@Html.DisplayNameFor(model => model.NameCarCategory)*@
+            hãng xe
+        </th>
+        <th class="text-right">
+            @*@Html.DisplayNameFor(model => model.CarCategoryStatus)*@
+            Trạng thái
+        </th>
+        <th class="text-right">Công cụ</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameCarCategory)
+            </td>
+            <td class="text-right">
+                @{
+                    if (item.CarCategoryStatus)
+                    {
+                        @Html.Raw("Còn kinh doanh")
+                    }
+                    else
+                    {
+                        @Html.Raw("Ngừng kinh doanh")
+                    }
+                }
+            </td>
+            <td class="text-right">
+                @Html.ActionLink("Edit", "Edit", new { id = item.CarCategoryId }, new { @class = "text-warning" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CarCategoryId }, new { @class = "text-warning" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CarCategoryId }, new { @class = "text-warning" })
+            </td>
+        </tr>
+    }
+
+</table>

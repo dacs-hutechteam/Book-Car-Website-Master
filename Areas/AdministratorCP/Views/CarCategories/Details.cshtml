@@ -1,0 +1,44 @@
+﻿@model BookCarProjectMaster.Models.CarCategory
+
+@{
+    ViewBag.Title = "Details Category";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-uppercase text-center mt-5">Thông tin</h2>
+
+<div>
+    <h4 class="text-uppercase text-center">Hãng xe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NameCarCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameCarCategory)
+        </dd>
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.CarCategoryStatus)
+            </dt>*@
+
+        <dd>
+            @{
+                if (Model.CarCategoryStatus)
+                {
+                    @Html.Raw("Còn kinh doanh")
+                }
+                else
+                {
+                    @Html.Raw("Ngừng kinh doanh")
+                }
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CarCategoryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

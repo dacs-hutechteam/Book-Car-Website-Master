@@ -1,0 +1,26 @@
+﻿@using BookCarProjectMaster.Models
+@model List<CartItem>
+@{
+    ViewBag.Title = "Giohang";
+    Layout = "~/Views/Shared/_LayoutCartItem.cshtml";
+}
+
+<table class="table table-dark">
+    <tr>
+        <td>Ten Xe</td>
+        <td>gia thue</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.tenXe</td>
+            <td>@item.giaThue</td>
+        </tr>
+    }
+    <tr>
+        <td>Tong tien thue: @ViewBag.Tongtien $</td>
+    </tr>
+</table>
+<div class="text-center">
+    @Html.ActionLink("TIẾN HÀNH ĐẶT XE", "Datxe", "CartItemBC", new { @class="book-now-btn"})
+</div>

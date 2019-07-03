@@ -1,0 +1,99 @@
+﻿@model IEnumerable<BookCarProjectMaster.Models.BookCar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-uppercase text-center mt-5">Quản lý đặt xe</h2>
+
+<p class="text-right text-uppercase">
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table table-dark">
+    <tr style="background-color: darkgray; color: black; text-transform: uppercase">
+        @*<th>
+            @Html.DisplayNameFor(model => model.CarProduct.ModelCar)
+        </th>*@
+        <th>
+            @*@Html.DisplayNameFor(model => model.DateBookCar)*@
+            Ngày đặt xe
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TotalRental)*@
+            thanh toán
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.DateOfReceive)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.DateReturn)
+        </th>*@
+        <th>
+            @*@Html.DisplayNameFor(model => model.PaymentStatus)*@
+            Trạng thái
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.FullNameUser)*@
+            Họ tên
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CardIDUser)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.AddressUser)
+        </th>*@
+        <th>
+            @*@Html.DisplayNameFor(model => model.NumberPhoneUser)*@
+            Số ĐT
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.EmailUser)
+        </th>*@
+        <th class="text-right">Công cụ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CarProduct.ModelCar)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.DateBookCar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalRental)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DateOfReceive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateReturn)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullNameUser)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CardIDUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddressUser)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberPhoneUser)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.EmailUser)
+        </td>*@
+        <td class="text-right">
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookCarsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookCarsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookCarsId })
+        </td>
+    </tr>
+}
+
+</table>

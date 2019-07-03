@@ -1,0 +1,46 @@
+﻿@model BookCarProjectMaster.Models.CarCategory
+
+@{
+    ViewBag.Title = "Delete Category";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 class="text-uppercase text-center text-danger m-5">Bạn có chắc muốn xóa hãng xe @Html.DisplayFor(model => model.NameCarCategory) này không?</h3>
+<div>
+    <h4 class="text-uppercase text-center text-success">hãy cân nhắc!!!</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color d-flex justify-content-lg-center">
+            <input type="submit" value="Xóa" class="btn btn-danger" />
+            @Html.ActionLink("Hủy", "Index", null, new { @class = "btn btn-success" })
+        </div>
+    }
+    <hr />
+    @*<dl class="dl-horizontal d-flex">
+            <dt>
+                @Html.DisplayNameFor(model => model.NameCarCategory)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NameCarCategory)
+            </dd>
+
+            <dd>
+                @{
+                    if (Model.CarCategoryStatus)
+                    {
+                        @Html.Raw("Còn kinh doanh")
+                    }
+                    else
+                    {
+                        @Html.Raw("Ngừng kinh doanh")
+                    }
+                }
+            </dd>
+
+        </dl>*@
+
+
+</div>

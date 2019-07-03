@@ -1,0 +1,107 @@
+﻿@model BookCarProjectMaster.Models.BookCar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookCar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CarProduct.ModelCar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarProduct.ModelCar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateBookCar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateBookCar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalRental)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalRental)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfReceive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfReceive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateReturn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateReturn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullNameUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullNameUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardIDUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardIDUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberPhoneUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberPhoneUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailUser)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookCarsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

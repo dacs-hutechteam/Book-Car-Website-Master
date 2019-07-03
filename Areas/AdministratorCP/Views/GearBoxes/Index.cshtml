@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BookCarProjectMaster.Models.GearBox>
+
+@{
+    ViewBag.Title = "GearBox : Administrator";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-uppercase text-center mt-5">GearBox</h2>
+
+<p class="text-right text-uppercase">
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table table-dark">
+    <tr style="background-color: darkgray; color: black; text-transform: uppercase">
+        <th>
+            @Html.DisplayNameFor(model => model.NameGearBox)
+        </th>
+        <th class="text-right">Công cụ</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameGearBox)
+            </td>
+            <td class="text-right">
+                @Html.ActionLink("Edit", "Edit", new { id = item.GearBoxsId }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.GearBoxsId }) |*@
+                @Html.ActionLink("Delete", "Delete", new { id = item.GearBoxsId })
+            </td>
+        </tr>
+    }
+
+</table>

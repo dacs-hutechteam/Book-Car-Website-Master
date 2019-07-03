@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BookCarProjectMaster.Models.Fuel>
+
+@{
+    ViewBag.Title = "Fuels Car";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-uppercase text-center mt-5">Quản lý nhiên liệu</h2>
+
+<p class="text-right text-uppercase">
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table table-dark">
+    <tr style="background-color: darkgray; color: black; text-transform: uppercase">
+        <th>
+            @Html.DisplayNameFor(model => model.NameFuel)
+        </th>
+        <th class="text-right">Công cụ</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameFuel)
+            </td>
+            <td class="text-right">
+                @Html.ActionLink("Edit", "Edit", new { id = item.FuelsId }, new { @class = "text-warning" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FuelsId }, new { @class = "text-warning" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FuelsId }, new { @class = "text-warning" })
+            </td>
+        </tr>
+    }
+
+</table>
