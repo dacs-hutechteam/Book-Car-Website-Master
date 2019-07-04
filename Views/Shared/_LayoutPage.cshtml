@@ -225,6 +225,14 @@
                         <!-- Choose Area Tab Menu -->
                         <!-- Choose Area Tab content -->
                         <div class="tab-content" id="myTabContent">
+                            <div class="text-warning text-center">
+                                <hr />
+                                <h5>Xem Thêm</h5>
+                                <hr />
+                                <ul class="d-flex justify-content-around">
+                                    <li class="p-car-feature">@Html.Action("CourseCategories", "Home")</li>
+                                </ul>
+                            </div>
                             <!-- Popular Cars Tab Start -->
                             <div class="tab-pane fade show active" id="popular_cars" role="tabpanel" aria-labelledby="home-tab">
                                 <!-- Popular Cars Content Wrapper Start -->
@@ -242,15 +250,8 @@
                                 </div>
                                 <!-- Popular Cars Content Wrapper End -->
                             </div>
-                            
-                            <div class="text-warning text-center">
-                                <hr />
-                                <h5>Xem Thêm</h5>
-                                <hr/>
-                                <ul class="d-flex justify-content-around">
-                                    <li class="p-car-feature">@Html.Action("CourseCategories", "Home")</li>
-                                </ul>
-                            </div>
+
+
                             <!-- Popular Cars Tab End -->
                             <!-- Office Map Tab -->
                             <div class="tab-pane fade" id="office_map" role="tabpanel" aria-labelledby="contact-tab">
