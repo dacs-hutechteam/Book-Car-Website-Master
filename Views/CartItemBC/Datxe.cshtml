@@ -25,7 +25,7 @@
     @Html.ActionLink("TRỞ VỀ GIỎ HÀNG", "Giohang", "CartItemBC", new { @class = "book-now-btn" })
     <hr />
 </div>
-
+@*form đăng kí đặt xe*@
 <div class="review-area">
     <h5>Thông tin của bạn </h5>
     <hr />
@@ -34,52 +34,55 @@
         {
             @Html.ValidationSummary(true)
 
-            <form method="post" id="form-validate">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 p-3">
-                        <div class="name-input">
-                            <input type="text" name="hoTen" placeholder="Nhập họ tên của bạn (Nguyễn Văn A)" required/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 p-3">
-                        <div class="name-input">
-                            <input type="text" name="diaChi" placeholder="Nhập địa chỉ" required/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 p-3">
-                        <div>
-                            <input type="text" name="sdt" placeholder="Nhập số điện thoại (038XXXXXXX)" required/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 p-3">
-                        <div class="name-input">
-                            <input type="text" name="cmnd" placeholder="Nhập số chứng minh nhân dân (301XXXXXX)" required/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 p-3">
-                        <h6 class="p-2">Ngày nhận xe: </h6>
-                        <div>
-                            <input type="date" name="ngayNhan" placeholder="Chọn ngày" required/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 p-3">
-                        <h6 class="p-2">Ngày trả xe: </h6>
-                        <div>
-                            <input type="date" name="ngayTra" required/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 p-3">
-                        <div>
-                            <h5>Ngày đặt xe: @DateTime.Now.ToShortDateString()</h5>
-                        </div>
+        <form method="post" id="form-validate">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 p-3">
+                    <div class="name-input">
+                        <input type="text" name="hoTen" placeholder="Nhập họ tên của bạn (Nguyễn Văn A)" required />
                     </div>
                 </div>
-                <div>
-                    <div class="input-submit">
-                        <button type="submit">ĐỒNG Ý ĐẶT XE</button>
-</div>
+                <div class="col-lg-6 col-md-6 p-3">
+                    <div class="name-input">
+                        <input type="text" name="diaChi" placeholder="Nhập địa chỉ" required />
+                    </div>
                 </div>
-            </form>
+                <div class="col-lg-6 col-md-6 p-3">
+                    <div>
+                        <input type="text" name="sdt" placeholder="Nhập số điện thoại (038XXXXXXX)" required />
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 p-3">
+                    <div class="name-input">
+                        <input type="text" name="cmnd" placeholder="Nhập số chứng minh nhân dân (301XXXXXX)" required />
+                    </div>
+                </div>
+                @*Người dùng được quyền chọn ngày trả và ngày nhận xe*@
+                <div class="col-lg-6 col-md-6 p-3">
+                    <h6 class="p-2">Ngày nhận xe: </h6>
+                    <div>
+                        <input type="date" name="ngayNhan" placeholder="Chọn ngày" required />
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 p-3">
+                    <h6 class="p-2">Ngày trả xe: </h6>
+                    <div>
+                        <input type="date" name="ngayTra" required />
+                    </div>
+                </div>
+                @*Ngày đặt Xe Lấy Giờ hiện Tại của hệ thống*@
+                <div class="col-lg-6 col-md-6 p-3">
+                    <div>
+                        <h5>Ngày đặt xe: @DateTime.Now.ToShortDateString()</h5>
+                    </div>
+                </div>
+            </div>
+            @*Khi Nhấn Submit Thành công giao diện người dùng được chuyển sang trang Xacnhan.cshtml để biết mình đã dặt xe thành công*@
+            <div>
+                <div class="input-submit">
+                    <button type="submit">ĐỒNG Ý ĐẶT XE</button>
+                </div>
+            </div>
+        </form>
 
         }
     </div>

@@ -1,4 +1,4 @@
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace BookCarProjectMaster.Models
 {
@@ -8,7 +8,8 @@ namespace BookCarProjectMaster.Models
             : base("name=DbBookCarContext")
         {
         }
-
+        //Đây Là Lớp DAO Quản Lý Entity Framework để quản lý các dử liệu từ database
+        //Bạn mở tệp Web.config trong thư mục gốc project ra và bổ sung thẻ connectionStrings vào trong thẻ configuration với các thông số kế nối với sever database của máy
         //public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
