@@ -231,6 +231,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ImageUpload\admin-icon.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -524,7 +525,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\AdministratorCP\Models\" />
     <Folder Include="Areas\AdministratorCP\Views\Shared\" />
-    <Folder Include="ImageUpload\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
